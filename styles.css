@@ -3,12 +3,18 @@
 	src: url(roboto-2014/Roboto-Medium.ttf);
 }
 
-body {
+html, body {
+	margin: 0;
+	height: 100%;
+	width: 100%;
 	font-family: robotoMedium;
 	color: white;
+	display: flex;
+	align-items: center;
 }
 
 .bg {
+	background: url(bigwood.jpg) no-repeat center center fixed;
 	content: "";
 	/* opacity: 0.5;*/
 	top: 0;
@@ -20,74 +26,69 @@ body {
 	overflow: auto;
 }
 
-.bg img {
-
-}
-
 .main {
 	margin-left: auto;
 	margin-right: auto;
-	width: 60%;
+	width: 70%;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
 }
 
 .title {
-	font-size: 2em;
+	font-size: 3em;
 }
 
 .profile {
-	position: relative;
-	margin-left: auto;
-	margin-right: auto;
+	display: flex;
+	align-items: center;
 }
 
 .profile img {
 	width: 100%;
 	height: auto;
+	margin: auto;
 }
 
 .col {
 	display: flex;
 	flex-direction: row;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
+	padding: 0 0.5em;
 }
 
 .social {
-	font-size: 1em;
+	font-size: 3em;
 	color: white;
-	padding-left: 0.5em;
 	text-decoration: none;
 }
 
-
-@media screen and (min-width: 480px) {
-
-	.profile {
-		width: 400px;
+@media screen and (min-width: 800px), screen and (orientation: landscape) {
+	.main {
+		width: 60%;
 	}
-
 }
 
-@media screen and (min-width: 480px) and (max-width: 720px) and (orientation: landscape) {
-
-	.profile {
-		width: 200px;
+@media screen and (orientation: landscape) {
+	.main {
+		width: 40%;
 	}
-
 }
 
+@media screen and (max-height: 479px) {
+
+	.main {
+		width: 40%;
+	}
+	.title, .social {
+		font-size: 1.5em;
+	}
+}
 
 @media screen and (max-width: 480px) {
-
-	/*
-	.profile {
-		width: 200px;
+	.title, .social {
+		font-size: 1.5em;
 	}
-	*/
-
-	.row {
-		flex-wrap: wrap;
-	}
-
 }
 
